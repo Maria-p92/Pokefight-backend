@@ -4,8 +4,6 @@ import fights from "./routes/fights.js";
 
 const port = process.env.PORT || 3000;
 const app = express();
-app.use(express.json());
-app.use("/fights", fights);
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
@@ -14,6 +12,8 @@ app.use((req, res, next) => {
   );
   next();
 });
+app.use(express.json());
+app.use("/fights", fights);
 
 app.get("/", (req, res) => {
   res.send(
