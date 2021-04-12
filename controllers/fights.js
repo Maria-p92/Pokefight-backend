@@ -3,10 +3,12 @@ client.connect();
 
 const getAllFights = async (req, res) => {
   try {
+    const sort = { score: -1 };
     const results = await client
       .db("pokefightDB")
       .collection("pokefightHighScore")
       .find()
+      .sort(sort)
       .toArray();
     res.json(results);
   } catch (error) {
