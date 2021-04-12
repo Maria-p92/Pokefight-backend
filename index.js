@@ -8,7 +8,9 @@ app.use(express.json());
 app.use("/fights", fights);
 
 app.get("/", (req, res) => {
-  res.send("<h1>This is the PokeFight API</h1>");
+  res.send(
+    "<h1>This is the PokeFight API</h1><p>Please use /fights to get all the fights or to post a new fight.</p>"
+  );
 });
 
 app.listen(port, () => console.log(`Server running in ${port}`));

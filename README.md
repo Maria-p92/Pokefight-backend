@@ -1,17 +1,18 @@
 # Pokefight-backend
 
-[Item/:id]
-[Item/:username]
-[Item/:pokename]
-[Item/:Score]
-[Item/ win (True/False)]
+/fights
+{
+name: string
+pokename: string
+score: int
+win: true or false
+}
 
-- Fight/:id
-    -Above inside
-    
+/fights/:id
+to retrieve specific fight
+
 GET -> High Score
-POST -> New fights  /fights (all the fights)
-
+POST -> New fights /fights (all the fights)
 
 1- Create Node
 2- Connect Mongo DB
