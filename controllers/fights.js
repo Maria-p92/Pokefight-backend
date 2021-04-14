@@ -9,6 +9,7 @@ const getAllFights = async (req, res) => {
       .collection("pokefightHighScore")
       .find()
       .sort(sort)
+      .limit(10)
       .toArray();
     res.json(results);
   } catch (error) {
