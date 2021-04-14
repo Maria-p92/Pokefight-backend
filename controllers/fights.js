@@ -18,7 +18,7 @@ const getAllFights = async (req, res) => {
 
 export const createNewFight = async (req, res) => {
   try {
-    const { name, pokename, score, win } = req.body;
+    const { name, pokename, score, win, numberofrolls } = req.body;
     const result = await client
       .db("pokefightDB")
       .collection("pokefightHighScore")
@@ -27,6 +27,7 @@ export const createNewFight = async (req, res) => {
         pokename,
         score,
         win,
+        numberofrolls,
       });
     res.json(result.ops[0]);
   } catch (error) {
